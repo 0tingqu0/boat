@@ -145,7 +145,7 @@ int main(void)
 	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_3, 0);        //设置占空比50%
 	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_4, 0);        //设置占空比50%
 
-	OLED_Init();
+//	OLED_Init();
 
 	//RF24L01引脚初始化
 	NRF24L01_Gpio_Init();
@@ -166,9 +166,9 @@ int main(void)
 		{
 			parse_input_str(g_RF24L01RxBuffer, RX_BUFF);//解析接收数据
 			update_motion_control(RX_BUFF);
-			i++;OLED_Clear();
-			OLED_ShowString(0, i, g_RF24L01RxBuffer, 16, 0);
-			if(i==7)i=-1;
+//			i++;OLED_Clear();
+//			OLED_ShowString(0, i, g_RF24L01RxBuffer, 16, 0);
+//			if(i==7)i=-1;
 			HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
 
 		}

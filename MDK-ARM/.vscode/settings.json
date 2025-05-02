@@ -1,0 +1,29 @@
+{
+    "files.associations": {
+        "spi.h": "c",
+        "gpio.h": "c",
+        "driver.h": "c"
+    },
+    "cmsis-csolution.actions": [
+        {
+            "path": "template.csolution.yml",
+            "target": "template",
+            "config": {
+                "run": "cmsis-csolution.build: Build",
+                "debug": "Arm Debugger"
+            },
+            "projects": [
+                {
+                    "path": "template.cproject.yml",
+                    "config": {
+                        "run": "cmsis-csolution.build: Build",
+                        "debug": "Arm Debugger"
+                    }
+                }
+            ]
+        }
+    ],
+    "clangd.arguments": [
+        "--compile-commands-dir=c:\\Users\\zhang\\Desktop\\my_bysj\\Software\\boad\\MDK-ARM\\out\\template\\template"
+    ]
+}

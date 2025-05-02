@@ -1,0 +1,5 @@
+../Core/Src/driver.c:43:13:apply_deadzone	16	static
+../Core/Src/driver.c:64:12:speed_to_pwm	24	static
+../Core/Src/driver.c:73:13:motor_control	24	static
+../Core/Src/driver.c:99:6:update_motion_control	48	static
+../Core/Src/driver.c:146:6:quiescent	8	static

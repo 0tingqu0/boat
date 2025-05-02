@@ -1,0 +1,21 @@
+build-idx:
+  generated-by: csolution version 2.8.0
+  csolution: template.csolution.yml
+  tmpdir: tmp
+  cprojects:
+    - cproject: template.cproject.yml
+  cbuilds:
+    - cbuild: template+template.cbuild.yml
+      project: template
+      configuration: +template
+      errors: true
+      messages:
+        errors:
+          - file 'C:/Users/zhang/Desktop/my_bysj/Software/boad/MDK-ARM/RTE/Device/STM32F103C8/STM32F101_102_103_105_107.dbgconf' not found; use --update-rte
+        info:
+          - template.cbuild-pack.yml - file is already up-to-date
+          - template+template.cbuild-run.yml - file generated successfully
+          - template+template.cbuild.yml - file is already up-to-date
+      packs-unused:
+        - pack: ARM::CMSIS-DSP@1.16.2
+        - pack: ARM::CMSIS-NN@4.1.0

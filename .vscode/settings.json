@@ -1,0 +1,5 @@
+{
+    "clangd.arguments": [
+        "--compile-commands-dir=c:\\Users\\zhang\\Desktop\\my_bysj\\Software\\boad\\MDK-ARM\\out\\template\\template"
+    ]
+}

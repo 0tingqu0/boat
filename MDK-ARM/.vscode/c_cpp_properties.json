@@ -3,17 +3,20 @@
         {
             "name": "template",
             "includePath": [
-                "c:\\Users\\zhang\\Desktop\\my_bysj\\Software\\boad\\Core\\Inc",
-                "c:\\Users\\zhang\\Desktop\\my_bysj\\Software\\boad\\Drivers\\STM32F1xx_HAL_Driver\\Inc",
-                "c:\\Users\\zhang\\Desktop\\my_bysj\\Software\\boad\\Drivers\\STM32F1xx_HAL_Driver\\Inc\\Legacy",
-                "c:\\Users\\zhang\\Desktop\\my_bysj\\Software\\boad\\Drivers\\CMSIS\\Device\\ST\\STM32F1xx\\Include",
-                "c:\\Users\\zhang\\Desktop\\my_bysj\\Software\\boad\\Drivers\\CMSIS\\Include",
-                "c:\\Users\\zhang\\Desktop\\my_bysj\\Software\\boad\\oled\\Inc",
-                "c:\\Users\\zhang\\Desktop\\my_bysj\\Software\\boad\\Microsoft VS Code",
-                "c:\\Users\\zhang\\Desktop\\my_bysj\\Software\\boad\\Core\\Src",
-                "c:\\Users\\zhang\\Desktop\\my_bysj\\Software\\boad\\Drivers\\STM32F1xx_HAL_Driver\\Src",
-                "c:\\Users\\zhang\\Desktop\\my_bysj\\Software\\boad\\oled\\Src",
-                "${default}"
+                "c:\\Users\\zhang\\Desktop\\my_bysj\\Software\\boat\\Core\\Inc",
+                "c:\\Users\\zhang\\Desktop\\my_bysj\\Software\\boat\\Drivers\\STM32F1xx_HAL_Driver\\Inc",
+                "c:\\Users\\zhang\\Desktop\\my_bysj\\Software\\boat\\Drivers\\STM32F1xx_HAL_Driver\\Inc\\Legacy",
+                "c:\\Users\\zhang\\Desktop\\my_bysj\\Software\\boat\\Drivers\\CMSIS\\Device\\ST\\STM32F1xx\\Include",
+                "c:\\Users\\zhang\\Desktop\\my_bysj\\Software\\boat\\Drivers\\CMSIS\\Include",
+                "c:\\Users\\zhang\\Desktop\\my_bysj\\Software\\boat\\oled\\Inc",
+                "F:\\KEIL\\Keil_v5\\ARM\\ARMCC\\include",
+                "F:\\KEIL\\Keil_v5\\ARM\\ARMCC\\include\\arm_linux",
+                "F:\\KEIL\\Keil_v5\\ARM\\ARMCC\\include\\arm_linux_compat",
+                "F:\\KEIL\\Keil_v5\\ARM\\ARMCC\\include\\rw",
+                "c:\\Users\\zhang\\Desktop\\my_bysj\\Software\\boat\\MDK-ARM",
+                "c:\\Users\\zhang\\Desktop\\my_bysj\\Software\\boat\\Core\\Src",
+                "c:\\Users\\zhang\\Desktop\\my_bysj\\Software\\boat\\Drivers\\STM32F1xx_HAL_Driver\\Src",
+                "c:\\Users\\zhang\\Desktop\\my_bysj\\Software\\boat\\oled\\Src"
             ],
             "defines": [
                 "USE_HAL_DRIVER",

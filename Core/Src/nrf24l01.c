@@ -676,7 +676,6 @@ uint8_t NRF24L01_check_DMA(void)
 {
 	uint8_t i;
 	uint8_t buf[5] = { 0xA5, 0xA5, 0xA5, 0xA5, 0xA5 };
-	uint8_t read_buf[5] = { 0 };
 	uint8_t tx_buf[6], rx_buf[6];
 	uint32_t start_time = HAL_GetTick();
 

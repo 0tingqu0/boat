@@ -13,12 +13,17 @@
 // 常量定义
 #define CENTER 2048
 #define CENTER_DEADZONE 200
-#define EDGE_DEADZONE 300
-#define PWM_MIN 595    // 电机启动值 (1%)
-#define PWM_MAX 665    // 最大PWM值 (100%)
+#define EDGE_DEADZONE 20
+#define PWM_MIN 595 // 电机启动值 (1%)
+#define PWM_MAX 665 // 最大PWM值 (100%)
 #define PWM_RANGE (PWM_MAX - PWM_MIN)
 
-// 电机控制结构体
+float throttle_percent=0; // 油门百分比
+
+/*
+ *电机控制结构体
+ * 用于设置PWM和方向控制
+ */
 typedef struct
 {
 	GPIO_TypeDef *in1_port;
@@ -31,15 +36,15 @@ typedef struct
 } MotorController;
 
 // 电机实例化
-MotorController left_motor = { .in1_port = GPIOA, .in1_pin = GPIO_PIN_0,
-        .in2_port = GPIOA, .in2_pin = GPIO_PIN_1, .pwm_tim = &htim2,
-        .pwm_in1_channel = TIM_CHANNEL_1, .pwm_in2_channel = TIM_CHANNEL_2 };
+MotorController left_motor = {.in1_port = GPIOA, .in1_pin = GPIO_PIN_0, .in2_port = GPIOA, .in2_pin = GPIO_PIN_1, .pwm_tim = &htim2, .pwm_in1_channel = TIM_CHANNEL_1, .pwm_in2_channel = TIM_CHANNEL_2};
 
-MotorController right_motor = { .in1_port = GPIOA, .in1_pin = GPIO_PIN_2,
-        .in2_port = GPIOA, .in2_pin = GPIO_PIN_3, .pwm_tim = &htim2,
-        .pwm_in1_channel = TIM_CHANNEL_3, .pwm_in2_channel = TIM_CHANNEL_4 };
+MotorController right_motor = {.in1_port = GPIOA, .in1_pin = GPIO_PIN_2, .in2_port = GPIOA, .in2_pin = GPIO_PIN_3, .pwm_tim = &htim2, .pwm_in1_channel = TIM_CHANNEL_3, .pwm_in2_channel = TIM_CHANNEL_4};
 
-// 应用死区处理
+/*
+ *	应用死区处理
+ * @param raw 原始输入值
+ * @param processed 处理后的值
+ */
 static void apply_deadzone(int raw, int *processed)
 {
 	*processed = raw;
@@ -60,78 +65,89 @@ static void apply_deadzone(int raw, int *processed)
 	}
 }
 
-// 速度转PWM值
+/* 速度转PWM值
+ * @param speed 速度值 (-1.0到1.0)
+ * @return PWM值 (0到100%)
+ */
 static int speed_to_pwm(float speed)
 {
 	float abs_speed = fabsf(speed);
 	if (abs_speed <= 0)
 		return 0;
-	return (int) round(PWM_MIN + ((abs_speed - 1) / 99) * PWM_RANGE);
+	return (int)round(PWM_MIN + ((abs_speed - 1) / 99) * PWM_RANGE);
 }
 
-// 电机控制函数
+/* 电机控制函数
+ *	@param motor 电机控制结构体
+ *	@param speed 速度值 (-1.0到1.0)
+ *   @return 无
+ */
 static void motor_control(MotorController *motor, float speed)
 {
 	// 计算PWM值
 	int pwm = speed_to_pwm(speed);
 
-//    // 方向控制
-	if (speed > 0)
+	if (throttle_percent > 0)
 	{
-		__HAL_TIM_SET_COMPARE(motor->pwm_tim, motor->pwm_in1_channel, 0);
-		__HAL_TIM_SET_COMPARE(motor->pwm_tim, motor->pwm_in2_channel, pwm);
+		if (speed >= 0)
+		{
+			/* code */
+			__HAL_TIM_SET_COMPARE(motor->pwm_tim, motor->pwm_in1_channel, 0);
+			__HAL_TIM_SET_COMPARE(motor->pwm_tim, motor->pwm_in2_channel, pwm);
+		}
+		else if (speed <= 0)
+		{
+			/* code */
+			__HAL_TIM_SET_COMPARE(motor->pwm_tim, motor->pwm_in1_channel, pwm);
+			__HAL_TIM_SET_COMPARE(motor->pwm_tim, motor->pwm_in2_channel, 0);
+		}
 	}
-//    else if (speed < 0) {
-//        HAL_GPIO_WritePin(motor->in1_port, motor->in1_pin, GPIO_PIN_RESET);
-//        HAL_GPIO_WritePin(motor->in2_port, motor->in2_pin, GPIO_PIN_SET);
-//    }
 	else
 	{
 		__HAL_TIM_SET_COMPARE(motor->pwm_tim, motor->pwm_in1_channel, 0);
 		__HAL_TIM_SET_COMPARE(motor->pwm_tim, motor->pwm_in2_channel, 0);
 	}
-
-//    // 设置PWM
-//    __HAL_TIM_SET_COMPARE(motor->pwm_tim, motor->pwm_channel, pwm);
 }
 
 // 主控制函数
 void update_motion_control(int *input_array)
 {
-	int x_processed, y_processed;
-	float x_norm, y_norm;
-	float left_speed, right_speed;
-	float throttle_percent;
+	int x_processed, y_processed;  // 处理后的输入值
+	float x_norm, y_norm;		   // 归一化后的输入值
+	float left_speed, right_speed; // 左右电机速度
 
 	// 1. 应用死区处理
 	apply_deadzone(input_array[0], &x_processed);
 	apply_deadzone(input_array[1], &y_processed);
 
 	// 2. 归一化处理 (-1.0到1.0范围)
-	x_norm = (x_processed - CENTER) / (float) (CENTER - EDGE_DEADZONE);
-	y_norm = (y_processed - CENTER) / (float) (CENTER - EDGE_DEADZONE);
+	x_norm = (x_processed - CENTER) / (float)(CENTER - EDGE_DEADZONE);
+	y_norm = (y_processed - CENTER) / (float)(CENTER - EDGE_DEADZONE);
 
 	// 限制在[-1, 1]范围内
 	x_norm = fmaxf(-1.0f, fminf(1.0f, x_norm));
 	y_norm = fmaxf(-1.0f, fminf(1.0f, y_norm));
 
 	// 3. 计算油门百分比 (0-100%)
-	if (input_array[3] <= (2048 + CENTER))
+	if (input_array[2] > CENTER && input_array[2] < (4096 - EDGE_DEADZONE))
 	{
-		throttle_percent = 0;
+		throttle_percent = ((input_array[2] - 2048) / (float)2048) * 99 + 1; // 范围 在1到100之间
 	}
-	else if (input_array[3] >= 4080)
+	else if (input_array[2] >= (4096 - EDGE_DEADZONE))
 	{
 		throttle_percent = 100;
 	}
-	else
+	else if (input_array[2] <= CENTER)
 	{
-		throttle_percent = ((input_array[3] - 2048) / (float) 2048) * 99 + 1;
+		throttle_percent = 0;
 	}
+	
+	// 限制在[0, 100]范围内
+	throttle_percent = fmaxf(0.0f, fminf(100.0f, throttle_percent));
 
 	// 4. 差速驱动计算
-	left_speed = (y_norm + x_norm) * throttle_percent / 100.0f;
-	right_speed = (y_norm - x_norm) * throttle_percent / 100.0f;
+	left_speed = (y_norm + x_norm) * throttle_percent / 100.0f;	 // 左电机速度
+	right_speed = (y_norm - x_norm) * throttle_percent / 100.0f; // 右电机速度
 
 	// 限幅处理 (确保在-100%到100%之间)
 	left_speed = fmaxf(-1.0f, fminf(1.0f, left_speed));

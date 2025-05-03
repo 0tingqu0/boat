@@ -5637,7 +5637,7 @@ static void I2C_MasterReceive_RXNE(I2C_HandleTypeDef *hi2c)
       *hi2c->pBuffPtr = (uint8_t)hi2c->Instance->DR;
 
       /* Increment Buffer pointer */
-你      hi2c->pBuffPtr++;
+     hi2c->pBuffPtr++;
 
       /* Update counter */
       hi2c->XferCount--;

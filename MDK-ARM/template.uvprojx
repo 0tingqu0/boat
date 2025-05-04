@@ -501,6 +501,11 @@
               <FileType>1</FileType>
               <FilePath>..\Core\Src\driver.c</FilePath>
             </File>
+            <File>
+              <FileName>gps.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\Src\gps.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

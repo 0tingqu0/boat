@@ -10,7 +10,7 @@
 
 #include "main.h"
 
-
+void quiescent(void);
 static void apply_deadzone(int raw, int *processed);
 static int speed_to_pwm(float speed) ;
 

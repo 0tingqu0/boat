@@ -15,7 +15,7 @@ build-idx:
         info:
           - template.cbuild-pack.yml - file is already up-to-date
           - template+template.cbuild-run.yml - file generated successfully
-          - template+template.cbuild.yml - file generated successfully
+          - template+template.cbuild.yml - file is already up-to-date
       packs-unused:
         - pack: ARM::CMSIS-DSP@1.16.2
         - pack: ARM::CMSIS-NN@4.1.0

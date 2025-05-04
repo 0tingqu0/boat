@@ -36,9 +36,10 @@ template\main.o: ../Core/Inc/spi.h
 template\main.o: ../Core/Inc/tim.h
 template\main.o: ../Core/Inc/usart.h
 template\main.o: ../Core/Inc/gpio.h
-template\main.o: ../oled/Inc/oled.h
 template\main.o: F:\KEIL\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 template\main.o: F:\KEIL\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 template\main.o: F:\KEIL\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 template\main.o: ../Core/Inc/nrf24l01.h
 template\main.o: ../Core/Inc/driver.h
+template\main.o: ../Core/Inc/gps.h
+template\main.o: ../oled/Inc/oled.h

@@ -11,6 +11,7 @@
 "template\stm32f1xx_it.o"
 "template\stm32f1xx_hal_msp.o"
 "template\driver.o"
+"template\gps.o"
 "template\stm32f1xx_hal_gpio_ex.o"
 "template\stm32f1xx_hal_i2c.o"
 "template\stm32f1xx_hal.o"

@@ -898,7 +898,6 @@ uint8_t NRF24L01_TxPacket_DMA(uint8_t *txbuf, uint8_t Length)
 			RF24L01_Set_Mode_DMA(MODE_TX);
 			break;
 		}
-		HAL_Delay(1);
 	}
 
 	// 读取并清除状态

@@ -71,10 +71,6 @@ void Error_Handler(void);
 #define SPI1_CE_GPIO_Port GPIOB
 #define SPI1_CSN_Pin GPIO_PIN_1
 #define SPI1_CSN_GPIO_Port GPIOB
-#define remode1_Pin GPIO_PIN_3
-#define remode1_GPIO_Port GPIOB
-#define remode2_Pin GPIO_PIN_4
-#define remode2_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 

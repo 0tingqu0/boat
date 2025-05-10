@@ -57,7 +57,7 @@ uint8_t g_TxMode = 0, g_UartRxFlag = 0;
 char g_UartRxBuffer[100] = {0};
 char g_RF24L01RxBuffer[20] = {0};
 uint8_t conversion = 0;        // nrf24l01转换标志
-uint8_t g_RF24L01TxBuffer[20]; // nRF24L01发送缓冲区
+uint8_t g_RF24L01TxBuffer[100]; // nRF24L01发送缓冲区
 
 extern uint8_t gps_buffer[512];  // GPS数据缓冲区
 extern uint8_t gps_buffer_index; // GPS数据缓冲区索引

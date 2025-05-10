@@ -396,11 +396,6 @@
           <GroupName>Application/User/Core</GroupName>
           <Files>
             <File>
-              <FileName>nrf24l01.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Core\Src\nrf24l01.c</FilePath>
-            </File>
-            <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/Src/main.c</FilePath>
@@ -505,6 +500,11 @@
               <FileName>gps.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Core\Src\gps.c</FilePath>
+            </File>
+            <File>
+              <FileName>nrf24l01.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\Src\nrf24l01.c</FilePath>
             </File>
           </Files>
         </Group>

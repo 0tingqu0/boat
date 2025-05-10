@@ -3,7 +3,7 @@
 <title>Static Call Graph - [template\template.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image template\template.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Mon May 05 01:27:09 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Sat May 10 19:11:27 2025
 <BR><P>
 <H3>Maximum Stack Usage =        216 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -290,9 +290,9 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_float_round
 <LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_float_epilogue
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;update_motion_control
-<LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fsub
+<BR>[Called By]<UL><LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fsub
 <LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_control
+<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;update_motion_control
 <LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_frsub
 </UL>
 
@@ -301,8 +301,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;update_motion_control
-<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_control
+<BR>[Called By]<UL><LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_control
+<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;update_motion_control
 </UL>
 
 <P><STRONG><a name="[4f]"></a>__aeabi_frsub</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, fadd.o(.text), UNUSED)
@@ -312,8 +312,8 @@ Global Symbols
 <P><STRONG><a name="[f1]"></a>__aeabi_fmul</STRONG> (Thumb, 100 bytes, Stack size 8 bytes, fmul.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __aeabi_fmul
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;update_motion_control
-<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_control
+<BR>[Called By]<UL><LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_control
+<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;update_motion_control
 </UL>
 
 <P><STRONG><a name="[50]"></a>__aeabi_fdiv</STRONG> (Thumb, 124 bytes, Stack size 8 bytes, fdiv.o(.text))
@@ -321,8 +321,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_float_round
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;update_motion_control
-<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_control
+<BR>[Called By]<UL><LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_control
+<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;update_motion_control
 </UL>
 
 <P><STRONG><a name="[f8]"></a>__ARM_scalbnf</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, fscalb.o(.text))
@@ -560,10 +560,10 @@ Global Symbols
 <P><STRONG><a name="[86]"></a>HAL_DMA_Abort_IT</STRONG> (Thumb, 148 bytes, Stack size 8 bytes, stm32f1xx_hal_dma.o(i.HAL_DMA_Abort_IT))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = HAL_DMA_Abort_IT
 </UL>
-<BR>[Called By]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Slave_STOPF
-<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_ITError
-<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_IRQHandler
+<BR>[Called By]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_IRQHandler
 <LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_IRQHandler
+<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Slave_STOPF
+<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_ITError
 </UL>
 
 <P><STRONG><a name="[bb]"></a>HAL_DMA_GetState</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f1xx_hal_dma.o(i.HAL_DMA_GetState))
@@ -610,43 +610,43 @@ Global Symbols
 <P><STRONG><a name="[77]"></a>HAL_GPIO_Init</STRONG> (Thumb, 446 bytes, Stack size 40 bytes, stm32f1xx_hal_gpio.o(i.HAL_GPIO_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = HAL_GPIO_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_MspPostInit
+<BR>[Called By]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_MspInit
+<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_MspPostInit
 <LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_MspInit
 <LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_MspInit
 <LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
-<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_MspInit
 </UL>
 
 <P><STRONG><a name="[d8]"></a>HAL_GPIO_TogglePin</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, stm32f1xx_hal_gpio.o(i.HAL_GPIO_TogglePin))
-<BR><BR>[Called By]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_check_DMA
+<BR><BR>[Called By]<UL><LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_check_DMA
+<LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
 <P><STRONG><a name="[be]"></a>HAL_GPIO_WritePin</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f1xx_hal_gpio.o(i.HAL_GPIO_WritePin))
-<BR><BR>[Called By]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
-<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RF24L01_Set_Mode_DMA
+<BR><BR>[Called By]<UL><LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RF24L01_Set_Mode_DMA
 <LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RF24L01_Init_DMA
 <LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_check_DMA
-<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Write_Reg_DMA
 <LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_TxPacket_DMA
+<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_RxPacket_DMA
+<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Gpio_Init
+<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
+<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Write_Reg_DMA
 <LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Set_TxAddr_DMA
 <LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Set_RxAddr_DMA
-<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_RxPacket_DMA
 <LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Read_Status_Register
 <LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Read_Reg_DMA
 <LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Read_Buf_DMA
-<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Gpio_Init
 <LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Clear_IRQ_Flag
 </UL>
 
 <P><STRONG><a name="[64]"></a>HAL_GetTick</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f1xx_hal.o(i.HAL_GetTick))
-<BR><BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_OscConfig
+<BR><BR>[Called By]<UL><LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_check_DMA
+<LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_TxPacket_DMA
+<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_RxPacket_DMA
+<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_OscConfig
 <LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_ClockConfig
 <LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_TransmitReceive
 <LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
-<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_check_DMA
-<LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_TxPacket_DMA
-<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_RxPacket_DMA
 <LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_WaitFlagStateUntilTimeout
 <LI><a href="#[3a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_DMATransmitReceiveCplt
 <LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_DMATransmitCplt
@@ -744,13 +744,13 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[72]"></a>HAL_I2C_SlaveRxCpltCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f1xx_hal_i2c.o(i.HAL_I2C_SlaveRxCpltCallback))
-<BR><BR>[Called By]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Slave_STOPF
-<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_EV_IRQHandler
+<BR><BR>[Called By]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_EV_IRQHandler
+<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Slave_STOPF
 </UL>
 
 <P><STRONG><a name="[73]"></a>HAL_I2C_SlaveTxCpltCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f1xx_hal_i2c.o(i.HAL_I2C_SlaveTxCpltCallback))
-<BR><BR>[Called By]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Slave_AF
-<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_EV_IRQHandler
+<BR><BR>[Called By]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_EV_IRQHandler
+<LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Slave_AF
 </UL>
 
 <P><STRONG><a name="[e1]"></a>HAL_IncTick</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, stm32f1xx_hal.o(i.HAL_IncTick))
@@ -784,11 +784,11 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[7b]"></a>HAL_NVIC_EnableIRQ</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f1xx_hal_cortex.o(i.HAL_NVIC_EnableIRQ))
-<BR><BR>[Called By]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_MspInit
+<BR><BR>[Called By]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_MspInit
+<LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_MspInit
 <LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_MspInit
 <LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_MspInit
 <LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_DMA_Init
-<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_MspInit
 </UL>
 
 <P><STRONG><a name="[7a]"></a>HAL_NVIC_SetPriority</STRONG> (Thumb, 60 bytes, Stack size 16 bytes, stm32f1xx_hal_cortex.o(i.HAL_NVIC_SetPriority))
@@ -796,11 +796,11 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_SetPriority
 </UL>
-<BR>[Called By]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_MspInit
+<BR>[Called By]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_MspInit
+<LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_MspInit
 <LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_MspInit
 <LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_MspInit
 <LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_DMA_Init
-<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_MspInit
 <LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
 </UL>
 
@@ -849,13 +849,13 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[ce]"></a>HAL_SPI_GetState</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f1xx_hal_spi.o(i.HAL_SPI_GetState))
-<BR><BR>[Called By]<UL><LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;drv_spi_read_write_byte_dma
-<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;drv_spi_read_write_buffer_dma
-<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RF24L01_Set_Mode_DMA
+<BR><BR>[Called By]<UL><LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RF24L01_Set_Mode_DMA
 <LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RF24L01_Init_DMA
 <LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_check_DMA
-<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Write_Reg_DMA
 <LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_TxPacket_DMA
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;drv_spi_read_write_byte_dma
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;drv_spi_read_write_buffer_dma
+<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Write_Reg_DMA
 <LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Set_TxAddr_DMA
 <LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Set_RxAddr_DMA
 <LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Read_Reg_DMA
@@ -912,10 +912,10 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Start_IT
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;drv_spi_read_write_byte_dma
-<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;drv_spi_read_write_buffer_dma
-<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RF24L01_Set_Mode_DMA
+<BR>[Called By]<UL><LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RF24L01_Set_Mode_DMA
 <LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_check_DMA
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;drv_spi_read_write_byte_dma
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;drv_spi_read_write_buffer_dma
 <LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Read_Reg_DMA
 </UL>
 
@@ -927,8 +927,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RF24L01_Set_Mode_DMA
 <LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RF24L01_Init_DMA
 <LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_check_DMA
-<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Write_Reg_DMA
 <LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_TxPacket_DMA
+<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Write_Reg_DMA
 <LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Set_TxAddr_DMA
 <LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Set_RxAddr_DMA
 </UL>
@@ -1165,11 +1165,11 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[bd]"></a>MX_GPIO_Init</STRONG> (Thumb, 222 bytes, Stack size 48 bytes, gpio.o(i.MX_GPIO_Init))
+<P><STRONG><a name="[bd]"></a>MX_GPIO_Init</STRONG> (Thumb, 236 bytes, Stack size 48 bytes, gpio.o(i.MX_GPIO_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = MX_GPIO_Init &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
-<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -1221,8 +1221,8 @@ Global Symbols
 <P><STRONG><a name="[c5]"></a>MX_USART1_UART_Init</STRONG> (Thumb, 48 bytes, Stack size 8 bytes, usart.o(i.MX_USART1_UART_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = MX_USART1_UART_Init &rArr; HAL_UART_Init &rArr; HAL_UART_MspInit &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
-<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Init
+<BR>[Calls]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Init
+<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
 </UL>
 <BR>[Called By]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -1256,9 +1256,9 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
-<BR>[Called By]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-<LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_TxPacket_DMA
+<BR>[Called By]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_TxPacket_DMA
 <LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_RxPacket_DMA
+<LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
 <P><STRONG><a name="[ca]"></a>NRF24L01_Read_Buf_DMA</STRONG> (Thumb, 72 bytes, Stack size 80 bytes, nrf24l01.o(i.NRF24L01_Read_Buf_DMA))
@@ -1275,9 +1275,9 @@ Global Symbols
 <P><STRONG><a name="[cd]"></a>NRF24L01_Read_Reg_DMA</STRONG> (Thumb, 66 bytes, Stack size 16 bytes, nrf24l01.o(i.NRF24L01_Read_Reg_DMA))
 <BR><BR>[Stack]<UL><LI>Max Depth = 60<LI>Call Chain = NRF24L01_Read_Reg_DMA &rArr; HAL_SPI_TransmitReceive_DMA &rArr; HAL_DMA_Start_IT &rArr; DMA_SetConfig
 </UL>
-<BR>[Calls]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_TransmitReceive_DMA
+<BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_TransmitReceive_DMA
 <LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_GetState
-<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
 <BR>[Called By]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_TxPacket_DMA
 <LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_RxPacket_DMA
@@ -1295,16 +1295,16 @@ Global Symbols
 <P><STRONG><a name="[cf]"></a>NRF24L01_RxPacket_DMA</STRONG> (Thumb, 136 bytes, Stack size 16 bytes, nrf24l01.o(i.NRF24L01_RxPacket_DMA))
 <BR><BR>[Stack]<UL><LI>Max Depth = 208<LI>Call Chain = NRF24L01_RxPacket_DMA &rArr; RF24L01_Init_DMA &rArr; NRF24L01_Clear_IRQ_Flag &rArr; NRF24L01_Read_Status_Register &rArr; drv_spi_read_write_byte &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
-<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
-<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
-<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;drv_spi_read_write_byte_dma
+<BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 <LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RF24L01_Set_Mode_DMA
 <LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RF24L01_Init_DMA
+<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Gpio_Init
+<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
+<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;drv_spi_read_write_byte_dma
 <LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Write_Reg_DMA
 <LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Read_Reg_DMA
 <LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Read_Buf_DMA
-<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Gpio_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -1312,9 +1312,9 @@ Global Symbols
 <P><STRONG><a name="[d4]"></a>NRF24L01_Set_RxAddr_DMA</STRONG> (Thumb, 78 bytes, Stack size 24 bytes, nrf24l01.o(i.NRF24L01_Set_RxAddr_DMA))
 <BR><BR>[Stack]<UL><LI>Max Depth = 68<LI>Call Chain = NRF24L01_Set_RxAddr_DMA &rArr; HAL_SPI_Transmit_DMA &rArr; HAL_DMA_Start_IT &rArr; DMA_SetConfig
 </UL>
-<BR>[Calls]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit_DMA
+<BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit_DMA
 <LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_GetState
-<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 <LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 </UL>
 <BR>[Called By]<UL><LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RF24L01_Init_DMA
@@ -1323,9 +1323,9 @@ Global Symbols
 <P><STRONG><a name="[d5]"></a>NRF24L01_Set_TxAddr_DMA</STRONG> (Thumb, 72 bytes, Stack size 24 bytes, nrf24l01.o(i.NRF24L01_Set_TxAddr_DMA))
 <BR><BR>[Stack]<UL><LI>Max Depth = 68<LI>Call Chain = NRF24L01_Set_TxAddr_DMA &rArr; HAL_SPI_Transmit_DMA &rArr; HAL_DMA_Start_IT &rArr; DMA_SetConfig
 </UL>
-<BR>[Calls]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit_DMA
+<BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit_DMA
 <LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_GetState
-<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 <LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 </UL>
 <BR>[Called By]<UL><LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RF24L01_Init_DMA
@@ -1334,16 +1334,16 @@ Global Symbols
 <P><STRONG><a name="[d6]"></a>NRF24L01_TxPacket_DMA</STRONG> (Thumb, 196 bytes, Stack size 24 bytes, nrf24l01.o(i.NRF24L01_TxPacket_DMA))
 <BR><BR>[Stack]<UL><LI>Max Depth = 216<LI>Call Chain = NRF24L01_TxPacket_DMA &rArr; RF24L01_Init_DMA &rArr; NRF24L01_Clear_IRQ_Flag &rArr; NRF24L01_Read_Status_Register &rArr; drv_spi_read_write_byte &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit_DMA
-<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_GetState
-<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
-<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
-<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;drv_spi_read_write_byte_dma
+<BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 <LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RF24L01_Set_Mode_DMA
 <LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RF24L01_Init_DMA
+<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Gpio_Init
+<LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit_DMA
+<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_GetState
+<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;drv_spi_read_write_byte_dma
 <LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Write_Reg_DMA
 <LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Read_Reg_DMA
-<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Gpio_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -1351,9 +1351,9 @@ Global Symbols
 <P><STRONG><a name="[d3]"></a>NRF24L01_Write_Reg_DMA</STRONG> (Thumb, 58 bytes, Stack size 16 bytes, nrf24l01.o(i.NRF24L01_Write_Reg_DMA))
 <BR><BR>[Stack]<UL><LI>Max Depth = 60<LI>Call Chain = NRF24L01_Write_Reg_DMA &rArr; HAL_SPI_Transmit_DMA &rArr; HAL_DMA_Start_IT &rArr; DMA_SetConfig
 </UL>
-<BR>[Calls]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit_DMA
+<BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit_DMA
 <LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_GetState
-<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
 <BR>[Called By]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_TxPacket_DMA
 <LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_RxPacket_DMA
@@ -1362,12 +1362,12 @@ Global Symbols
 <P><STRONG><a name="[d7]"></a>NRF24L01_check_DMA</STRONG> (Thumb, 212 bytes, Stack size 48 bytes, nrf24l01.o(i.NRF24L01_check_DMA))
 <BR><BR>[Stack]<UL><LI>Max Depth = 92<LI>Call Chain = NRF24L01_check_DMA &rArr; HAL_SPI_Transmit_DMA &rArr; HAL_DMA_Start_IT &rArr; DMA_SetConfig
 </UL>
-<BR>[Calls]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit_DMA
+<BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_TogglePin
+<LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit_DMA
 <LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_TransmitReceive_DMA
 <LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_GetState
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
-<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
-<LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_TogglePin
 <LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 <LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
 </UL>
@@ -1380,30 +1380,30 @@ Global Symbols
 <P><STRONG><a name="[d1]"></a>RF24L01_Init_DMA</STRONG> (Thumb, 140 bytes, Stack size 32 bytes, nrf24l01.o(i.RF24L01_Init_DMA))
 <BR><BR>[Stack]<UL><LI>Max Depth = 192<LI>Call Chain = RF24L01_Init_DMA &rArr; NRF24L01_Clear_IRQ_Flag &rArr; NRF24L01_Read_Status_Register &rArr; drv_spi_read_write_byte &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit_DMA
+<BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit_DMA
 <LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_GetState
-<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 <LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 <LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Set_TxAddr_DMA
 <LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Set_RxAddr_DMA
 <LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Clear_IRQ_Flag
 </UL>
-<BR>[Called By]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-<LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_TxPacket_DMA
+<BR>[Called By]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_TxPacket_DMA
 <LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_RxPacket_DMA
+<LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
 <P><STRONG><a name="[d2]"></a>RF24L01_Set_Mode_DMA</STRONG> (Thumb, 134 bytes, Stack size 24 bytes, nrf24l01.o(i.RF24L01_Set_Mode_DMA))
 <BR><BR>[Stack]<UL><LI>Max Depth = 68<LI>Call Chain = RF24L01_Set_Mode_DMA &rArr; HAL_SPI_Transmit_DMA &rArr; HAL_DMA_Start_IT &rArr; DMA_SetConfig
 </UL>
-<BR>[Calls]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit_DMA
+<BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit_DMA
 <LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_TransmitReceive_DMA
 <LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_GetState
-<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
-<BR>[Called By]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-<LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_TxPacket_DMA
+<BR>[Called By]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_TxPacket_DMA
 <LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_RxPacket_DMA
+<LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
 <P><STRONG><a name="[2d]"></a>SPI1_IRQHandler</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f1xx_it.o(i.SPI1_IRQHandler))
@@ -1534,9 +1534,9 @@ Global Symbols
 <P><STRONG><a name="[d0]"></a>drv_spi_read_write_byte_dma</STRONG> (Thumb, 38 bytes, Stack size 16 bytes, nrf24l01.o(i.drv_spi_read_write_byte_dma))
 <BR><BR>[Stack]<UL><LI>Max Depth = 60<LI>Call Chain = drv_spi_read_write_byte_dma &rArr; HAL_SPI_TransmitReceive_DMA &rArr; HAL_DMA_Start_IT &rArr; DMA_SetConfig
 </UL>
-<BR>[Calls]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_TransmitReceive_DMA
+<BR>[Calls]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
+<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_TransmitReceive_DMA
 <LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_GetState
-<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
 </UL>
 <BR>[Called By]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_TxPacket_DMA
 <LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_RxPacket_DMA
@@ -1563,6 +1563,12 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;update_motion_control
 <LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;quiescent
+<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RF24L01_Set_Mode_DMA
+<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RF24L01_Init_DMA
+<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_check_DMA
+<LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_TxPacket_DMA
+<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_RxPacket_DMA
+<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Gpio_Init
 <LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_USART1_UART_Init
 <LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_TIM2_Init
 <LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_TIM1_Init
@@ -1573,15 +1579,9 @@ Global Symbols
 <LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Start
 <LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Start_IT
 <LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
+<LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_TogglePin
 <LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parse_input_str
 <LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
-<LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_TogglePin
-<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RF24L01_Set_Mode_DMA
-<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RF24L01_Init_DMA
-<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_check_DMA
-<LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_TxPacket_DMA
-<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_RxPacket_DMA
-<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Gpio_Init
 <LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2snprintf
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> entry9a.o(.ARM.Collect$$$$0000000B)
@@ -1677,8 +1677,8 @@ Local Symbols
 <LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_AbortCpltCallback
 <LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Abort_IT
 </UL>
-<BR>[Called By]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Slave_STOPF
-<LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_ER_IRQHandler
+<BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_ER_IRQHandler
+<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Slave_STOPF
 </UL>
 
 <P><STRONG><a name="[70]"></a>I2C_MasterReceive_BTF</STRONG> (Thumb, 218 bytes, Stack size 8 bytes, stm32f1xx_hal_i2c.o(i.I2C_MasterReceive_BTF))
@@ -1735,8 +1735,8 @@ Local Symbols
 <BR>[Calls]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_MemTxCpltCallback
 <LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Flush_DR
 </UL>
-<BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_MasterTransmit_TXE
-<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_EV_IRQHandler
+<BR>[Called By]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_EV_IRQHandler
+<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_MasterTransmit_TXE
 </UL>
 
 <P><STRONG><a name="[69]"></a>I2C_Slave_ADDR</STRONG> (Thumb, 70 bytes, Stack size 16 bytes, stm32f1xx_hal_i2c.o(i.I2C_Slave_ADDR))

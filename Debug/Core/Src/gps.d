@@ -26,7 +26,8 @@ Core/Src/gps.o: ../Core/Src/gps.c ../Core/Inc/gps.h ../Core/Inc/main.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
- ../Core/Inc/usart.h ../Core/Inc/gpio.h ../Core/Inc/tim.h
+ ../Core/Inc/usart.h ../Core/Inc/nrf24l01.h ../Core/Inc/gpio.h \
+ ../Core/Inc/spi.h ../Core/Inc/usart.h
 ../Core/Inc/gps.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
@@ -57,5 +58,7 @@ Core/Src/gps.o: ../Core/Src/gps.c ../Core/Inc/gps.h ../Core/Inc/main.h \
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
 ../Core/Inc/usart.h:
+../Core/Inc/nrf24l01.h:
 ../Core/Inc/gpio.h:
-../Core/Inc/tim.h:
+../Core/Inc/spi.h:
+../Core/Inc/usart.h:

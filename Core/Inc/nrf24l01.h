@@ -13,6 +13,7 @@
 #include "spi.h"
 #include "usart.h"
 #include <string.h>
+#include <gps.h>
 
 /** 配置和选项定义 */
 #define DYNAMIC_PACKET      1       //1:动态数据包, 0:固定
@@ -181,6 +182,8 @@ typedef enum PowerType
 #define EN_DYN_ACK      0
 #define IRQ_ALL  ( (1<<RX_DR) | (1<<TX_DS) | (1<<MAX_RT) )
 
+extern uint8_t conversion; // nrf24l01转换标志
+
 uint8_t drv_spi_read_write_byte(uint8_t TxByte);
 HAL_StatusTypeDef drv_spi_read_write_buffer_dma(uint8_t *tx_buf, uint8_t *rx_buf, uint16_t len);
 
@@ -249,5 +252,6 @@ void NRF24L01_Gpio_Init( void );
 void RF24L01_Init( void );
 void RF24L01_Init_DMA(void);
 
+void mode_change(void);
 
 #endif /* INC_NRF24L01_H_ */

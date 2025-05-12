@@ -31,6 +31,12 @@ template\gps.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h
 template\gps.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 template\gps.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
 template\gps.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
+template\gps.o: F:\KEIL\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+template\gps.o: F:\KEIL\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+template\gps.o: F:\KEIL\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 template\gps.o: ../Core/Inc/usart.h
+template\gps.o: ../Core/Inc/nrf24l01.h
 template\gps.o: ../Core/Inc/gpio.h
-template\gps.o: ../Core/Inc/tim.h
+template\gps.o: ../Core/Inc/spi.h
+template\gps.o: ../Core/Inc/gps.h
+template\gps.o: F:\KEIL\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h

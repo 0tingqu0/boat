@@ -35,3 +35,8 @@ template\nrf24l01.o: ../Core/Inc/gpio.h
 template\nrf24l01.o: ../Core/Inc/spi.h
 template\nrf24l01.o: ../Core/Inc/usart.h
 template\nrf24l01.o: F:\KEIL\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+template\nrf24l01.o: ../Core/Inc/gps.h
+template\nrf24l01.o: F:\KEIL\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+template\nrf24l01.o: F:\KEIL\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+template\nrf24l01.o: ../Core/Inc/nrf24l01.h
+template\nrf24l01.o: F:\KEIL\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h

@@ -56,11 +56,10 @@ char data_ready = 0;
 uint8_t g_TxMode = 0, g_UartRxFlag = 0;
 char g_UartRxBuffer[100] = {0};
 char g_RF24L01RxBuffer[20] = {0};
-uint8_t conversion = 0;        // nrf24l01转换标志
+uint8_t conversion = 0;         // nrf24l01转换标志
 uint8_t g_RF24L01TxBuffer[100]; // nRF24L01发送缓冲区
 
-extern uint8_t gps_buffer[512];  // GPS数据缓冲区
-extern uint8_t gps_buffer_index; // GPS数据缓冲区索引
+extern uint8_t GPS_timer[32];
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -97,13 +96,47 @@ void parse_input_str(char *str, int arr[4])
     token = strtok(NULL, ",");
   }
 }
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+{
+  if (huart->Instance == USART1)
+  {
+    // 检查缓冲区溢出
+    if (gps_index >= sizeof(gps_buffer))
+    {
+      gps_index = 0;
+      return;
+    }
+
+    // 写入接收到的字节
+    gps_buffer[gps_index++] = g_UartRxBuffer[0];
+
+    // 检查是否收到完整帧（以 \r\n 结尾）
+    if (gps_index >= 6 && g_UartRxBuffer[0] == '\n' && gps_buffer[gps_index - 2] == '\r')
+    {
+      gps_buffer[gps_index] = '\0'; // 添加字符串终止符
+
+      // 关键点：检查是否为GNRMC帧
+      if (strstr((const char *)gps_buffer, "$GNRMC") != NULL)
+      {
+        parse_gnrmc((const char *)gps_buffer, &gps_data); // 解析GNRMC数据
+        gps_data.updata = 1;                              // 标记数据已更新
+                                                          // snprintf(GPS_timer, 32, "%s", &gps_buffer[0]); // 格式化为 hh:mm:ss.sss
+      }
+
+      gps_index = 0; // 重置缓冲区索引
+    }
+
+    // 重新启动DMA接收
+    HAL_UART_Receive_DMA(&huart1, (uint8_t *)g_UartRxBuffer, 1);
+  }
+}
 
 /* USER CODE END 0 */
 
 /**
-  * @brief  The application entry point.
-  * @retval int
-  */
+ * @brief  The application entry point.
+ * @retval int
+ */
 int main(void)
 {
 
@@ -160,16 +193,16 @@ int main(void)
   while (NRF24L01_check_DMA() == 0)
     ;
   RF24L01_Init_DMA();
-  RF24L01_Set_Mode_DMA(MODE_TX);            // 发送模式
-  
- 
+  RF24L01_Set_Mode_DMA(MODE_TX); // 发送模式
+
+  GPS_Init(); // 初始化GPS数据结构体
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    if (0 != NRF24L01_RxPacket_DMA(g_RF24L01RxBuffer)) // 接收字节
+    if (0 != NRF24L01_RxPacket_DMA((uint8_t *)g_RF24L01RxBuffer)) // 接收字节
     {
       parse_input_str(g_RF24L01RxBuffer, RX_BUFF); // 解析接收数据
 
@@ -188,23 +221,9 @@ int main(void)
         quiescent(); // 进入静止状态
         i = 0;
       }
-      if (conversion > 3) // 这里的condition是一个条件判断，具体条件需要根据实际情况定义
+      if (conversion > 3) // && gps_data.updata == 1这里的condition是一个条件判断，具体条件需要根据实际情况定义
       {
-
-        RF24L01_Set_Mode_DMA(MODE_TX); // 发送模式
-                                       
-        do
-        {
-          snprintf(gps_buffer , 512 , "%d" , g_RF24L01TxBuffer[0]=j);
-          if (NRF24L01_TxPacket_DMA(gps_buffer, 20) == TX_OK) // 发送数据
-          {
-            conversion = 0; // 重置转换标志
-          }
-          j++;
-          HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
-        } while (conversion >= 3); // 发送数据
-
-        RF24L01_Set_Mode_DMA(MODE_RX); // 接收模式
+        mode_change();
       }
     }
     /* USER CODE END WHILE */
@@ -215,17 +234,17 @@ int main(void)
 }
 
 /**
-  * @brief System Clock Configuration
-  * @retval None
-  */
+ * @brief System Clock Configuration
+ * @retval None
+ */
 void SystemClock_Config(void)
 {
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
 
   /** Initializes the RCC Oscillators according to the specified parameters
-  * in the RCC_OscInitTypeDef structure.
-  */
+   * in the RCC_OscInitTypeDef structure.
+   */
   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
   RCC_OscInitStruct.HSEPredivValue = RCC_HSE_PREDIV_DIV1;
@@ -239,9 +258,8 @@ void SystemClock_Config(void)
   }
 
   /** Initializes the CPU, AHB and APB buses clocks
-  */
-  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
-                              |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+   */
+  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2;
   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
@@ -258,9 +276,9 @@ void SystemClock_Config(void)
 /* USER CODE END 4 */
 
 /**
-  * @brief  This function is executed in case of error occurrence.
-  * @retval None
-  */
+ * @brief  This function is executed in case of error occurrence.
+ * @retval None
+ */
 void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
@@ -272,14 +290,14 @@ void Error_Handler(void)
   /* USER CODE END Error_Handler_Debug */
 }
 
-#ifdef  USE_FULL_ASSERT
+#ifdef USE_FULL_ASSERT
 /**
-  * @brief  Reports the name of the source file and the source line number
-  *         where the assert_param error has occurred.
-  * @param  file: pointer to the source file name
-  * @param  line: assert_param error line source number
-  * @retval None
-  */
+ * @brief  Reports the name of the source file and the source line number
+ *         where the assert_param error has occurred.
+ * @param  file: pointer to the source file name
+ * @param  line: assert_param error line source number
+ * @retval None
+ */
 void assert_failed(uint8_t *file, uint32_t line)
 {
   /* USER CODE BEGIN 6 */
